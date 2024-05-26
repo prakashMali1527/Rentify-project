@@ -35,8 +35,9 @@ module.exports.setAuthenticatedUser = async function (req, res, next) {
             let user = await User.findOne({ _id: user_id });
     
             if (user) {
-                // req.user contains the current signed in user from the session cookies and we are just sending this to the locals for the views
-    
+                // sending usr to the locals for the views and setting to req
+                
+                req.user = user;
                 res.locals.user = user;
         
                 // if the user is signed in, then pass on the request to the next function(controller's action)

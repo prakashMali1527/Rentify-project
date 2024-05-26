@@ -1,2 +1,43 @@
-<h1>hello world!!</h1>
-<%= locals.user %>
+<% if(locals.user) { %>
+    <div>
+        <form action="/users/post-property" method="POST">
+            <input type="text" name="city" placeholder="City" required>
+            <textarea name="address" placeholder="Address" required></textarea>
+            <input type="number" name="bedrooms" placeholder="Total badrooms" required>
+            <input type="number" name="bathrooms" placeholder="Total bathrooms" required>
+            <input type="text" name="nearby" placeholder="Neary By eg. hospital,colleges etc" required>
+            <button type="submit">Post Property</button>
+        </form>
+    </div>
+    <% } %>
+
+        <ul>
+            <% properties.forEach((property)=> { %>
+
+                <div class="property-container" id="property-container-<%=property.id%>">
+                    <a href="/users/delete-property/<%=property._id%>">X</a>
+                    <h4>
+                        Owner: <%= property.user.firstName %>
+                    </h4>
+                    <li>
+                        City: <%= property.city %>
+                    </li>
+                    <li>
+                        Address: <%= property.address %>
+                    </li>
+                    <li>
+                        Bathrooms: <%= property.bathrooms %>
+                    </li>
+                    <li>
+                        BedRooms: <%= property.bedrooms %>
+                    </li>
+                    <li>
+                        NearBy <%= property.nearby %>
+                    </li>
+
+                    <button class="interested-btn">Interested</button>
+
+                </div>
+                <% }) %>
+                    <hr>
+        </ul>

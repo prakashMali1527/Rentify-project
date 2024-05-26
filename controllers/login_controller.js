@@ -23,6 +23,7 @@ module.exports.createSession = async function (req, res) {
         }
 
         // create session
+        // we should use encrypted session, here i'm just using user id
         res.cookie('user_id', user.id);
 
         console.log('user session created successfully');

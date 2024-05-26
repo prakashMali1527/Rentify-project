@@ -12,6 +12,13 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// extract style and scripts from sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+
+// set static files
+app.use(express.static('./assets'));
+
 // use common layouts to all page
 app.use(expressLayouts);
 

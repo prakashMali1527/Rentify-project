@@ -13,7 +13,7 @@ module.exports.createSession = async function (req, res) {
         // validate user
         if (!user) {
             console.log('User not present : First create account');
-            return res.redirect('back');
+            return res.redirect('/signup');
         }
 
         // password does not match
@@ -28,7 +28,7 @@ module.exports.createSession = async function (req, res) {
 
         console.log('user session created successfully');
         
-        return res.redirect('back');
+        return res.redirect('/');
 
     } catch (err) {
         // invalidate user

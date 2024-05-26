@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/CSS/home.css">
 <% if(locals.user) { %>
     <div>
         <form action="/users/post-property" method="POST">
@@ -14,11 +15,9 @@
         <ul>
             <% properties.forEach((property)=> { %>
 
-                <div class="property-container" id="property-container-<%=property.id%>">
+                <div class="property-container">
                     <a href="/users/delete-property/<%=property._id%>">X</a>
-                    <h4>
-                        Owner: <%= property.user.firstName %>
-                    </h4>
+
                     <li>
                         City: <%= property.city %>
                     </li>
@@ -37,7 +36,17 @@
 
                     <button class="interested-btn">Interested</button>
 
+                    <div class="owner-info">
+                        <h4>Owner Contact details!!</h4>
+                        <span><%= property.user.firstName%> </span>
+                        <span><%= property.user.lastName %></span>
+                        <p><%= property.user.email %></p>
+                        <p><%= property.user.phone %></p>
+                    </div>
+
                 </div>
+                <hr>
                 <% }) %>
-                    <hr>
         </ul>
+        <script src="/JS/home.js
+        "></script>

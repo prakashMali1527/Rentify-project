@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/CSS/home.css">
+<p class="main-heading">Post you perfect <i>Rental home</i></p>
 <% if(locals.user) { %>
-    <div>
+    <div id="post-property-container">
         <form action="/users/post-property" method="POST">
             <input type="text" name="city" placeholder="City" required>
             <textarea name="address" placeholder="Address" required></textarea>
@@ -12,7 +13,8 @@
     </div>
     <% } %>
 
-        <ul>
+
+        <ul class="property-list-container">
             <% properties.forEach((property)=> { %>
 
                 <div class="property-container">
@@ -38,15 +40,23 @@
 
                     <div class="owner-info">
                         <h4>Owner Contact details!!</h4>
-                        <span><%= property.user.firstName%> </span>
-                        <span><%= property.user.lastName %></span>
-                        <p><%= property.user.email %></p>
-                        <p><%= property.user.phone %></p>
+                        <span>
+                            <%= property.user.firstName%>
+                        </span>
+                        <span>
+                            <%= property.user.lastName %>
+                        </span>
+                        <p>
+                            <%= property.user.email %>
+                        </p>
+                        <p>
+                            <%= property.user.phone %>
+                        </p>
                     </div>
 
                 </div>
-                <hr>
                 <% }) %>
         </ul>
+
         <script src="/JS/home.js
         "></script>

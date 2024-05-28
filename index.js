@@ -5,8 +5,10 @@ require('dotenv').config();
 const PORT = process.env.PORT | 3000;
 
 const db = require('./config/mongoose');
+
 const expressLayouts = require('express-ejs-layouts');
 const cookieParser = require('cookie-parser');
+
 const User = require('./models/user');
 const middleware = require('./config/middleware');
 

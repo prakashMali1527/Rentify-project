@@ -1,8 +1,27 @@
+:root{
+    --logo-size: 27px;
+}
+
 #navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(172, 172, 236);
+    background-color: rgb(118, 118, 244);
     height: 50px;
     padding: 0px 10px;
+    font-weight: bolder;
+}
+
+#home-logo{
+    font-size: var(--logo-size);
+}
+
+#user-links a{
+    margin-left: 10px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
 }

@@ -1,20 +1,26 @@
 <link rel="stylesheet" href="/CSS/home.css">
-<p class="main-heading">Post you perfect <i>Rental home</i></p>
-<% if(locals.user) { %>
-    <div id="post-property-container">
-        <form action="/users/post-property" method="POST">
-            <input type="text" name="city" placeholder="City" required>
-            <textarea name="address" placeholder="Address" required></textarea>
-            <input type="number" name="bedrooms" placeholder="Total badrooms" required>
-            <input type="number" name="bathrooms" placeholder="Total bathrooms" required>
-            <input type="text" name="nearby" placeholder="Neary By eg. hospital,colleges etc" required>
-            <button type="submit">Post Property</button>
-        </form>
-    </div>
-    <% } %>
 
+<div class="home-container">
+    <aside>
+        <p class="aside-heading">Post you perfect <i>Rental home</i></p>
+        <div id="post-property-container">
+            <form action="/users/post-property" method="POST">
+                <input type="text" name="city" placeholder="City" required>
+                <textarea name="address" placeholder="Address" required></textarea>
+                <input type="number" name="bedrooms" placeholder="Total badrooms" required>
+                <input type="number" name="bathrooms" placeholder="Total bathrooms" required>
+                <input type="text" name="nearby" placeholder="Neary By eg. hospital,colleges etc" required>
+                <button type="submit">Post Property</button>
+            </form>
+        </div>
+    </aside>
 
+    <div class="separator"></div>
+
+    <div class="main-section">
+        <p class="main-heading">Find you perfect <i>Rental home</i></p>
         <ul class="property-list-container">
+
             <% properties.forEach((property)=> { %>
 
                 <div class="property-container">
@@ -58,5 +64,8 @@
                 <% }) %>
         </ul>
 
-        <script src="/JS/home.js
+    </div>
+</div>
+
+<script src="/JS/home.js
         "></script>

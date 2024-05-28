@@ -1,15 +1,29 @@
-p.main-heading{
+.home-container{
+    display: flex;
+}
+
+aside{
+    width: 30%;
+}
+
+p.aside-heading, p.main-heading{
     margin: 20px 0px;
     text-align: center;
     font-size: 1.8rem;
     color: grey;
 }
 
-p.main-heading i{
+p.aside-heading i, p.main-heading i{
     font-size: 2rem;
     color: black;
     font-weight: bolder;
     font-family: "Damion", Arial, sans-serif;
+}
+
+.separator{
+    margin-left: 10px;
+    border-left: 1px solid grey;
+    /* height: 100%; */
 }
 
 #post-property-container{
@@ -19,11 +33,6 @@ p.main-heading i{
 }
 
 #post-property-container form{
-    /* display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-between;
-    align-items: center; */ 
     padding: 20px;
     background-color: antiquewhite;
     height: auto;
@@ -47,10 +56,29 @@ p.main-heading i{
 
 .property-list-container .property-container{
     background-color: aqua;
+    font-size: 1.1rem;
+    line-height: 1.3;
     padding: 10px;
     width: 200px;
+    height: 200px;
+    position: relative;
 }
 
+.interested-btn{
+    position: absolute;
+    z-index:2;
+}
+
+
 .owner-info{
+   
     display: none;
+    position: absolute;
+    top: 0;
+    margin-left: -10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(224, 245, 205);
+    z-index: 1;
 }

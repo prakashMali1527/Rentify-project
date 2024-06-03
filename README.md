@@ -1,5 +1,4 @@
-use npm start to run "nodemon index.js"
+# Rentify
+A web application to buy and sell rental property(house/home)
 
-run on port 8000
-
-user local authentication and create session 
+[Live Site](https://rentify-project.onrender.com/)
